@@ -1,0 +1,24 @@
+1. Vad gör "ADD employees.sql /docker-entrypoint-initdb.d/employees.sql" i er Dockerfile? 
+
+Svar: First from ther Docker file ,its need to copy the employees.sql and build the context
+in the docker image.
+When the container is initially launched, the entrypoint script diligently examines this designated directory 
+for any SQL files that are present. These files serve a vital purpose, as they contain instructions that bring databases, 
+tables, and other crucial data into existence within the database.
+So by adding employees.sql to the /docker-entrypoint-initdb.d/ directory
+  it will run when the container is first started and the workplace database and the employees table
+  will be created.
+
+2: Hur löste ni delen "Skapa/läs data från databasen med mariadb.py". Skriv kortfattat nedan. 
+
+Svar: .I edited the docker file changed mariadb user and maraiadb password.
+then build a Docker image in Dockerfile and used command "docker build -t my-mariadb-image -f Dockerfile .
+" then start new container .
+edit the python file and copy python file 
+
+
+3: Stötte ni på andra problem och hur löste ni dessa? Svara nedan.
+
+Svar: yes i had problem to set my passord in mariadb .
+using some comnad in docker i faced problem .
+i got error messge when i try to save file .
